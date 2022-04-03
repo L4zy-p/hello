@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+
+@layer base{
+  .app__navbar-logo img{
+    @apply w-[90px] h-[20px]
+    xxl:w-[180px] xxl:h-[40px];
+  }
+
+  .app__navbar-links li{
+    @apply my-0 mx-4 cursor-pointer flex-col;
+  }
+
+  .app__navbar-links li div{
+    @apply w-[5px] h-[5px] rounded-full mb-[5px]
+    transition-all duration-300 ease-in-out;
+  }
+
+  .app__navbar-links li a{
+    @apply text-gray dark:text-bgDark-100
+    no-underline flex-col
+    uppercase font-[500]
+    transition-all duration-300 ease-in-out;
+  }
+
+  .app__navbar-menu svg{
+    @apply w-[70%] h-[70%] text-white;
+  }
+
+  .app__navbar-menu div{
+    @apply fixed top-0 bottom-0 right-0 z-[5]
+    p-4 w-[80%] h-screen
+    flex justify-end items-end flex-col
+    bg-[url('../assets/bgWhite.png')] bg-white bg-cover bg-repeat
+    shadow-lg
+    lg:hidden;
+  }
+
+  .app__navbar-menu div svg{
+    @apply w-[35px] h-[35px] text-secondary my-2 mx-4;
+  }
+
+  .app__navbar-menu div ul{
+    @apply list-none m-0 p-0 h-full w-full
+    flex justify-start items-start flex-col;
+  }
+
+  .app__navbar-menu div ul li{
+    @apply m-4;
+  }
+
+  .app__navbar-menu div ul li a{
+    @apply text-gray uppercase text-base no-underline font-[500]
+    transition-all duration-300 ease-in-out
+    hover:text-secondary;
+  }
+}
+
+@layer components {
+  .app__navbar{
+    @apply w-full flex justify-between items-center
+    py-4 px-8 backdrop-blur-sm 
+    bg-navBg dark:bg-navBgDark
+    border-navBorder
+    fixed z-[2];
+  }
+
+  .app__navbar-logo{
+    @apply flex justify-start items-center;
+  }
+
+  .app__navbar-links{
+    @apply flex-1 hidden justify-center items-center list-none
+    lg:flex;
+  }
+
+  .app__navbar-menu {
+    @apply w-[35px] h-[35px] rounded-full relative
+    flex justify-center items-center bg-secondary
+    lg:hidden;
+  }
+}

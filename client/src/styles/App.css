@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+
+@layer base {
+  .copyright p {
+    @apply uppercase text-black;
+  }
+
+  .head-text span {
+    @apply text-secondary;
+  }
+
+  .app__social div {
+    @apply w-[40px] h-[40px] rounded-full 
+    bg-white dark:bg-bgDark-600
+    my-[0.25rem] mx-0 border-lightGray
+    flex justify-center items-center
+    transition-all duration-300 ease-in-out
+    xxl:w-[70px] xxl:h-[70px] xxl:my-[0.5rem] xxl:mx-0
+    hover:bg-secondary hover:border-secondary
+    dark:hover:bg-secondary dark:hover:border-secondary;
+  }
+
+  .app__social div svg {
+    @apply w-[15px] h-[15px] 
+    text-gray dark:text-bgDark-100
+    group-hover:text-white
+    xxl:w-[30px] xxl:h-[30px];
+  }
+
+  .app__navigation .app__navigation-dot {
+    @apply w-[10px] h-[10px] rounded-full bg-[#cbcbcb] m-2
+    transition duration-200 ease-in-out
+    hover:bg-secondary
+    xxl:w-[20px] xxl:h-[20px];
+  }
+  
+}
+
+@layer components {
+  .app {
+    @apply bg-primary dark:bg-bgDark-900 dark:text-bgDark-100 select-none;
+  }
+
+  .app__whitebg {
+    @apply bg-white dark:bg-bgDark-800;
+  }
+
+  .app__primarybg {
+    @apply bg-primary dark:bg-bgDark-900;
+  }
+
+  .app__container {
+    @apply w-full min-h-screen
+    flex flex-row;
+  }
+
+  .app__flex {
+    @apply flex justify-center items-center;
+  }
+
+  .app__wrapper {
+    @apply flex-1 w-full flex-col pt-8 pr-4 pb-8
+    xs:py-32 px-8;
+  }
+
+  .copyright {
+    @apply w-full p-8
+    flex flex-col justify-end items-end
+    sm:pt-4 pr-0 pb-0;
+  }
+
+  .head-text {
+    @apply text-[2rem] font-[800] text-center 
+    text-black dark:text-bgDark-100
+    capitalize
+    xs:text-[2.75rem] xxl:text-[4rem];
+  }
+
+  .p-text {
+    @apply text-[0.8rem] text-left 
+    text-gray dark:text-bgDark-100
+    leading-6
+    xxl:text-[1.75rem];
+  }
+
+  .bold-text {
+    @apply text-[0.9rem] font-[800] 
+    text-black dark:text-bgDark-100
+    text-left
+    xs:text-[1rem] xxl:text-[2rem];
+  }
+
+  .app__social {
+    @apply hidden justify-end items-center flex-col
+    p-4
+    sm:flex;
+  }
+
+  .app__navigation {
+    @apply hidden justify-center items-center flex-col
+    p-4
+    sm:flex;
+  }
+}

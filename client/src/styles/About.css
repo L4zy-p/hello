@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+
+@layer base{
+  .app__profile-item img{
+    @apply w-full h-[170px] rounded-[15px] object-cover;
+  }
+}
+
+@layer components {
+  .app__about{
+    @apply flex-1 w-full flex-col;
+  }
+
+  .app__profiles{
+    @apply flex justify-center items-start flex-wrap mt-8;
+  }
+
+  .app__profile-item{
+    @apply w-[190px] flex justify-start flex-col m-8
+    xxl:w-[370px] my-8 mx-16;
+  }
+}

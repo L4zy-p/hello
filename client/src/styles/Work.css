@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+
+@layer base{
+  .app__work-filter .app__work-filter-item{
+    @apply py-2 px-4 rounded-[0.5rem] 
+    bg-white text-black
+    dark:bg-bgDark-700 dark:text-bgDark-100
+    font-[800] cursor-pointer m-[0.5rem]
+    transition-all duration-300 ease-in-out
+    hover:bg-secondary hover:text-white
+    dark:hover:bg-secondary dark:hover:text-white
+    xxl:py-4 xxl:px-8 xxl:rounded-[0.85rem];
+  }
+
+  .app__work-filter .item-active{
+    @apply bg-secondary text-white;
+  }
+
+  .app__work-portfolio .app__work-item{
+    @apply w-full flex-col
+    m-4 p-4 rounded-[0.5rem] 
+    bg-white text-black
+    dark:bg-bgDark-600
+    cursor-pointer
+    transition-all duration-300 ease-in-out
+    hover:shadow-lg dark:hover:shadow-zinc-900 dark:hover:shadow-xl
+    xxl:w-[470px] xxl:p-5 xxl:rounded-[0.75rem]
+    xs:w-[270px] xs:m-8;
+  }
+
+  .app__work-img img{
+    @apply w-full h-full rounded-[0.5rem] object-cover;
+  }
+
+  .app__work-hover div{
+    @apply w-[50px] h-[50px] rounded-full bg-[rgba(0,0,0,0.5)] text-white
+    m-4 font-[800] cursor-pointer
+    transition-all duration-300 ease-in-out;
+  }
+
+  .app__work-hover svg{
+    @apply w-[50%] h-[50%] text-white;
+  }
+
+  .app__work-content h4{
+    @apply mt-4 leading-6;
+  }
+
+  .app__work-content .app__work-tag{
+    @apply absolute py-2 px-4 rounded-[10px]
+    bg-white dark:bg-bgDark-600 
+    top-[-25px];
+  }
+}
+
+@layer components{
+  .app__works{
+    @apply flex-1 w-full flex-col;
+  }
+
+  .app__work-filter{
+    @apply flex flex-row justify-start items-center flex-wrap
+    mt-16 mx-0 mb-8;
+  }
+
+  .app__work-portfolio{
+    @apply flex flex-wrap justify-center items-center;
+  }
+
+  .app__work-img{
+    @apply w-full h-[230px] relative
+    xxl:h-[350px];
+  }
+
+  .app__work-hover{
+    @apply absolute top-0 left-0 bottom-0 right-0 
+    w-full h-full bg-[rgba(0,0,0,0.5)]
+    rounded-[0.5rem] opacity-0
+    transition-all duration-300 ease-in-out;
+  }
+
+  .app__work-content{
+    @apply p-2 w-full relative flex-col;
+  }
+}

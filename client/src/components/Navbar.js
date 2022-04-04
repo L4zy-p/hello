@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { HiMenuAlt4, HiX } from 'react-icons/hi'
 import { motion } from 'framer-motion'
-
-import { images } from '../constants'
 import ThemeIcon from './ThemeIcon'
 
 const Navbar = () => {
@@ -10,11 +8,11 @@ const Navbar = () => {
   return (
     <nav className='app__navbar'>
       <div className='app__navbar-logo'>
-        <img src={images.logo} alt='logo' />
+        <p className='text-2xl'>Hello</p>
       </div>
       <ul className='app__navbar-links'>
         {
-          ['home', 'about', 'work', 'skills', 'contact'].map((item) =>
+          ['home', 'skills', 'work', 'contact'].map((item) =>
             <li className='app__flex p-text group' key={`link-${item}`}>
               <div className='group-hover:bg-secondary'/>
               <a className='group-hover:text-secondary' href={`#${item}`}>{item}</a>

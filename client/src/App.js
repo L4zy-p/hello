@@ -1,7 +1,6 @@
 import React from 'react'
 
 import {
-  About,
   Footer,
   Header,
   Skills,
@@ -16,9 +15,8 @@ const App = () => {
     <div className='app'>
       <Navbar />
       <Header />
-      <About />
-      <Work />
       <Skills />
+      <Work />
       <Footer />
     </div>
   )

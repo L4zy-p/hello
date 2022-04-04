@@ -13,7 +13,7 @@
   .app__social div {
     @apply w-[40px] h-[40px] rounded-full 
     bg-white dark:bg-bgDark-600
-    my-[0.25rem] mx-0 border-lightGray
+    my-[0.25rem] mx-0 border border-lightGray dark:border-bgDark-600
     flex justify-center items-center
     transition-all duration-300 ease-in-out
     xxl:w-[70px] xxl:h-[70px] xxl:my-[0.5rem] xxl:mx-0
@@ -24,7 +24,6 @@
   .app__social div svg {
     @apply w-[15px] h-[15px] 
     text-gray dark:text-bgDark-100
-    group-hover:text-white
     xxl:w-[30px] xxl:h-[30px];
   }
 
@@ -39,7 +38,8 @@
 
 @layer components {
   .app {
-    @apply bg-primary dark:bg-bgDark-900 dark:text-bgDark-100 select-none;
+    @apply bg-primary dark:bg-bgDark-900 dark:text-bgDark-100 select-none
+    w-full;
   }
 
   .app__whitebg {
@@ -60,8 +60,8 @@
   }
 
   .app__wrapper {
-    @apply flex-1 w-full flex-col pt-8 pr-4 pb-8
-    xs:py-32 px-8;
+    @apply flex-1 w-full flex-col pt-8 px-4 pb-8
+    xs:py-32 xs:px-4;
   }
 
   .copyright {

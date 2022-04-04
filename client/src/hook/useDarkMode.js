@@ -25,13 +25,13 @@ const useLocalStorage = (key, initialValue) => {
 
 const useDarkMode = () => {
   const [enabled, setEnabled] = useLocalStorage('dark-theme')
-  const isEnabled = enabled ? true : false
+  // const isEnabled = enabled ? true : false
 
   useEffect(() => {
     const className = 'dark'
     const bodyClass = window.document.body.classList
 
-    isEnabled ? bodyClass.add(className) : bodyClass.remove(className)
+    enabled ? bodyClass.add(className) : bodyClass.remove(className)
   }, [enabled, setEnabled])
 
   return [enabled, setEnabled]

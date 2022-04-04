@@ -6,13 +6,13 @@ const SocialMedia = () => {
   return (
     <div className='app__social'>
       <div className='group'>
-        <BsTwitter/>
+        <BsTwitter className='group-hover:text-white'/>
       </div>
       <div className='group'>
-        <FaFacebookF/>
+        <FaFacebookF className='group-hover:text-white'/>
       </div>
       <div className='group'>
-        <BsInstagram/>
+        <BsInstagram className='group-hover:text-white'/>
       </div>
     </div>
   )

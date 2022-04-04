@@ -66,17 +66,14 @@
 
   .app__header-img img{
     @apply w-full object-contain z-[1]
-  }
-
-  .app__header-img .overlay_circle{
-    @apply absolute left-0 right-0 bottom-0 z-0 w-full h-[90%];
+    sm:w-[80%]
   }
 }
 
 @layer components {
   .app__header {
     @apply flex-1 w-full h-full flex-col
-    pt-24 pr-4 pb-8
+    pt-24 px-4 pb-8
     xs:pt-24 xs:px-8 xs:pb-0
     xl:flex-row
     xxl:pt-8;
@@ -99,7 +96,7 @@
   }
 
   .app__header-img{
-    @apply flex-1 h-full flex justify-end items-end relative
+    @apply flex-1 h-full flex justify-center items-center relative
     my-8 mx-0;
   }
 }

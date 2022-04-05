@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { motion } from 'framer-motion'
 
 import { images } from '../constants'
 import { AppWrap } from '../wrapper'
+import { DarkThemeContext } from '../context/DarkThemeContext'
 
 const scaleVariants = {
   whileInView: {
@@ -15,7 +16,18 @@ const scaleVariants = {
   }
 }
 
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5 }
+  }
+}
+
 const Header = () => {
+  const { darkTheme } = useContext(DarkThemeContext)
+
   return (
     <div id='home' className='app__header app__flex'>
       <motion.div
@@ -43,8 +55,26 @@ const Header = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className='app__header-img'
       >
-        <img src={images.owl} alt='profile_bg' />
-
+        {
+          darkTheme &&
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            src={images.owlWake}
+            alt='profile_bg'
+          />
+        }
+        {
+          !darkTheme &&
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            src={images.owlSleep}
+            alt='profile_bg'
+          />
+        }
       </motion.div>
       <motion.div
         variants={scaleVariants}

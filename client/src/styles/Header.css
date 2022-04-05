@@ -97,6 +97,7 @@
 
   .app__header-img{
     @apply flex-1 h-full flex justify-center items-center relative
-    my-8 mx-0;
+    my-8 mx-0
+    transition-all duration-300 ease-in-out;
   }
 }

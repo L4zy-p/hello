@@ -31,7 +31,7 @@
     @apply fixed top-0 bottom-0 right-0 z-[5]
     p-4 w-[80%] h-screen
     flex justify-end items-end flex-col
-    bg-[url('../assets/bgWhite.png')] bg-white bg-cover bg-repeat
+    bg-white dark:bg-bgDark-600
     shadow-lg
     lg:hidden;
   }
@@ -50,7 +50,7 @@
   }
 
   .app__navbar-menu div ul li a{
-    @apply text-gray uppercase text-base no-underline font-[500]
+    @apply text-gray dark:text-bgDark-100 uppercase text-base no-underline font-[500]
     transition-all duration-300 ease-in-out
     hover:text-secondary;
   }

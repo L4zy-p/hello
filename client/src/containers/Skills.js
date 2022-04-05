@@ -1,27 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import ReactTooltip from 'react-tooltip'
 
 import { AppWrap, MotionWrap } from '../wrapper'
-import { images } from '../constants'
+import { client, urlFor } from '../client'
 
 const Skills = () => {
-  const [experiences, setExperiences] = useState([{
-    year: '2019',
-    works:[
-      {
-        _key: "721658793f6a",
-        _type: "workExperience",
-        company: "Other",
-        desc: "I worked as backend devloper at Other",
-        name: "Backend developer"
-      }
-    ]
-  }])
-  const [skills, setSkills] = useState([{ name: 'react', icon: images.react, bgColor: 'blue' }])
+  const [experiences, setExperiences] = useState([])
+  const [skills, setSkills] = useState([])
+
+  useEffect(() => {
+    const expQuery = '*[_type == "experiences"]'
+    const skillQuery = '*[_type == "skills"]'
+
+    client.fetch(expQuery).then((data) => {
+      setExperiences(data)
+    })
+
+    client.fetch(skillQuery).then((data) => {
+      setSkills(data)
+    })
+  }, [])
 
   return (
     <>
+    {console.log('skills', skills)}
       <h2 className='head-text'><span>Skills</span> & Experience</h2>
       <div className='app__skills-container'>
         <motion.div className='app__skills-list'>
@@ -33,7 +36,7 @@ const Skills = () => {
               key={skill.name}
             >
               <div className='app__flex' style={{ backgroundColor: skill.bgColor }}>
-                <img src={skill.icon} alt={skill.name} />
+                <img src={urlFor(skill.icon)} alt={skill.name} />
               </div>
               <p className='p-text'>{skill.name}</p>
 

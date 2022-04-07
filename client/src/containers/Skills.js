@@ -24,16 +24,15 @@ const Skills = () => {
 
   return (
     <>
-    {console.log('skills', skills)}
       <h2 className='head-text'><span>Skills</span> & Experience</h2>
       <div className='app__skills-container'>
         <motion.div className='app__skills-list'>
-          {skills.map((skill) => (
+          {skills.map((skill, index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className='app__skills-item app__flex'
-              key={skill.name}
+              key={index}
             >
               <div className='app__flex' style={{ backgroundColor: skill.bgColor }}>
                 <img src={urlFor(skill.icon)} alt={skill.name} />
@@ -44,17 +43,17 @@ const Skills = () => {
           ))}
         </motion.div>
         <motion.div className='app__skills-exp'>
-          {experiences?.map((exp) => (
+          {experiences?.map((exp, index) => (
             <motion.div
               className='app__skills-exp-item'
-              key={exp.year}
+              key={index}
             >
               <div className='app__skills-exp-year'>
                 <p className='bold-text'>{exp.year}</p>
               </div>
               <motion.div
                 className='app__skills-exp-works'>
-                {exp?.works?.map((work) => (
+                {exp?.works?.map((work, index) => (
                   <>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
@@ -62,7 +61,7 @@ const Skills = () => {
                       className='app__skills-exp-work'
                       data-tip
                       data-for={work.name}
-                      key={work.name}
+                      key={index}
                     >
                       <h4 className='bold-text'>{work.name}</h4>
                       <p className='p-text'>{work.company}</p>
